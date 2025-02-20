@@ -77,7 +77,7 @@ export const integrationSpecSettings = {
       app_description:
         "Responds to messages with relevant GIFs based on keywords",
       app_logo: "https://iili.io/2yD2sqJ.png",
-      app_url: "https://zd560pz9-7890.uks1.devtunnels.ms",
+      app_url: url,
       background_color: "#fff",
     },
     is_active: true,
@@ -109,10 +109,9 @@ export const integrationSpecSettings = {
         type: "multi-select",
         required: true,
         default:
-          "happy, say, playing, working, busy, tired, serious, dead, shoot, danger, difficult, funny, party, excited, awkward, livid, angry",
+          "happy, sad, playing, working, busy, tired, serious, dead, shoot, danger, difficult, funny, party, excited, awkward, livid, angry, thrilled, annoyed, anxious, brave, cheerful, clumsy, curious, defeated, determined, eager, energetic, fierce, frustrated, gentle, grateful, guilty, hopeful, helpless, hesitant, humble, hilarious, impatient, insecure, intelligent, jealous, joyful, lonely, lucky, mysterious, nervous, obedient, optimistic, outraged, peaceful, perplexed, powerful, proud, puzzled, relaxed, relieved, restless, romantic, ruthless, scared, selfish, serious, shocked, shy, silly, sleepy, sly, smug, sneaky, sorrowful, spiteful, stressed, strong, stubborn, successful, surprised, suspicious, thoughtful, tired, uncertain, uncomfortable, uneasy, unmotivated, unpredictable, victorious, weak, weary, worried",
       },
     ],
-    target_url: "https://zd560pz9-7890.uks1.devtunnels.ms/webhook",
-    tick_url: "/",
+    target_url: `${url}/webhook`,
   },
 };

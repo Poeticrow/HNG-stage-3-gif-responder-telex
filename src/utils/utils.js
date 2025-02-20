@@ -3,17 +3,29 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-async function getGif(keyword) {
+export async function getGif(keyword) {
   try {
     const apiKey = process.env.GIPHY_API_KEY;
+    const limit = 10; // Increase the limit to get more GIFs
     const response = await axios.get(`https://api.giphy.com/v1/gifs/search`, {
-      params: { api_key: apiKey, q: keyword, limit: 1 },
+      params: {
+        api_key: apiKey,
+        q: keyword,
+        limit: limit,
+        rating: "g",
+      },
     });
-    return response.data.data.length > 0 ? response.data.data[0].url : null;
+
+    const gifs = response.data.data;
+    if (gifs.length > 0) {
+      const randomIndex = Math.floor(Math.random() * gifs.length);
+      return gifs[randomIndex].images.original.url;
+    } else {
+      return null;
+    }
   } catch (error) {
     console.error("Error fetching GIF:", error);
     return null;
   }
 }
-
-export { getGif };
+// export { getGif };
