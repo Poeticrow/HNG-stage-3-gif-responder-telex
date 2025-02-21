@@ -36,23 +36,6 @@ router.post("/", validateWebhook, async (req, res) => {
   const textContent = message.replace(/<[^>]*>/g, " ").trim();
   const words = textContent.split(/\s+/);
 
-  // for (const word of words) {
-  //   if (customKeywords.includes(word.toLowerCase())) {
-  //     const gifUrl = await getGif(word, giphyApiKey);
-  //     if (gifUrl) {
-  //       return res.json({
-  //         status: "success",
-  //         message: `
-  //           <div>
-  //             <p>${message}</p>
-  //             <p><img src="${gifUrl}" alt="GIF"></p>
-  //           </div>
-  //         `,
-  //       });
-  //     }
-  //   }
-  // }
-
   for (const word of words) {
     if (customKeywords.includes(word.toLowerCase())) {
       try {
@@ -72,9 +55,11 @@ router.post("/", validateWebhook, async (req, res) => {
       }
     }
   }
+
   return res.json({
     status: "success",
-    message: `<div>${message}</div>`,
+    message,
+    // message: `<div>${message}</div>`,
   });
 });
 

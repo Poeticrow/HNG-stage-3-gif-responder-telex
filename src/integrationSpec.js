@@ -93,12 +93,6 @@ export const integrationSpecSettings = {
     author: "Ebube Nwanze",
     settings: [
       {
-        label: "Max Responses Per Minute",
-        type: "number",
-        required: true,
-        default: "5",
-      },
-      {
         label: "Giphy Api Key",
         type: "text",
         required: true,
