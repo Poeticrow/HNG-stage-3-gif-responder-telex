@@ -1,4 +1,5 @@
-const url = "https://zd560pz9-7890.uks1.devtunnels.ms";
+// const url = "https://zd560pz9-7890.uks1.devtunnels.ms";
+const url = "https://hng-stage-3-gif-responder-telex.onrender.com";
 
 // export const integrationSpecSettings = {
 //   data: {
