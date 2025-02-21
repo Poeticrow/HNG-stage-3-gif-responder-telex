@@ -24,8 +24,7 @@ export async function getGif(keyword) {
       return null;
     }
   } catch (error) {
-    console.error("Error fetching GIF:", error);
-    return null;
+    console.error("Giphy API Error:", error.message);
+    throw new Error("Failed to fetch GIF from Giphy");
   }
 }
-// export { getGif };
